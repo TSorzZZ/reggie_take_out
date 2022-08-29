@@ -1,9 +1,10 @@
 package com.tang.reggie.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.tang.reggie.entity.DishFlavor;
+import com.tang.reggie.entity.OrderDetail;
 import org.apache.ibatis.annotations.Mapper;
-
+ 
 @Mapper
-public interface DishFlavourMapping extends BaseMapper<DishFlavor> {
+public interface OrderDetailMapper extends BaseMapper<OrderDetail> {
+ 
 }

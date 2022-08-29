@@ -19,4 +19,4 @@ mybatis-plus:
       id-type: ASSIGN_ID
 
 reggie:
-  path: D:\Coding\WorkSpace\reggie_take_out\pic
+  path: D:\Coding\WorkSpace\reggie_take_out\pic\

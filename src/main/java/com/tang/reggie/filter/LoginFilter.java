@@ -27,12 +27,14 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String requestUri = request.getRequestURI();    //1-获得请求的uri
-        log.info("请求uri"+requestUri);
+        //log.info("请求uri"+requestUri);
         String[] urls = new String[]{                   //2-定义不需要请求的路径
                 "/employee/login",
                 "/employee/logout",
                 "/backend/**",
-                "/front/**"
+                "/front/**",
+                "/user/sendMsg",
+                "/user/login"
         };
         //3-判断本次请求是否需要处理
         boolean check = check(urls,requestUri);
@@ -40,7 +42,7 @@ public class LoginFilter implements Filter {
             filterChain.doFilter(request,response);
             return;
         }
-        //4-判断登陆状态
+        //4-判断后端登陆状态
         if(request.getSession().getAttribute("employee") != null){
             log.info("已登陆{}",request.getSession().getAttribute("employee"));
             Long empId = (Long)request.getSession().getAttribute("employee");
@@ -48,6 +50,15 @@ public class LoginFilter implements Filter {
             filterChain.doFilter(request,response);
             return;
         }
+        //4-判断前端登陆状态
+        if(request.getSession().getAttribute("user") != null){
+            log.info("已登陆{}",request.getSession().getAttribute("user"));
+            Long userId = (Long)request.getSession().getAttribute("user");
+            BaseContext.setCurrentId(userId);
+            filterChain.doFilter(request,response);
+            return;
+        }
+
         log.info("未登录");
         //5-如果未登录返回未登录结果
         response.getWriter().write(JSON.toJSONString(R.error("NOTLOGIN")));

@@ -57,6 +57,7 @@ public class CommonController {
 
         try {
             //输入流，通过输入流读取文件内容
+            log.info("开始下载{}",name);
             FileInputStream fileInputStream = new FileInputStream(new File(basePath + name));
 
             //输出流，通过输出流将文件写回浏览器，在浏览器展示图片
