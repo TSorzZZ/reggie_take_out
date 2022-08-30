@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.tang.reggie.common.R;
 import com.tang.reggie.entity.User;
 import com.tang.reggie.service.UserService;
-import com.tang.utils.ValidateCodeUtils;
+import com.tang.reggie.utils.ValidateCodeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.tang.utils;
+package com.tang.reggie.utils;
 
 import java.util.Random;
 

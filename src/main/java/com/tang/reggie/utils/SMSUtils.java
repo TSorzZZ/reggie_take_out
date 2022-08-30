@@ -1,4 +1,4 @@
-package com.tang.utils;
+package com.tang.reggie.utils;
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
