@@ -10,9 +10,12 @@ spring:
       username: root
       password: 123456
 redis:
-  host: 192.168.136.128
+  # Redis服务器地址
+  host: 192.168.3.82
+  # Redis服务器连接端口
   port: 6379
-  password: root@123456
+  # Redis服务器连接密码（默认为空）
+  # password: 123456
   database: 0
 mybatis-plus:
   configuration:
